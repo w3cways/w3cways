@@ -1,4 +1,6 @@
-
+/**
+ * drag.js
+ */
 const app = getApp();
 let GlobalData = app.globalData
 Component({
@@ -8,6 +10,9 @@ Component({
   properties: {
     position: Object
   },
+
+
+
 
   attached: function () {
     let safeArea = GlobalData.systemInfo.safeArea || null;
@@ -26,7 +31,7 @@ Component({
   },
 
   pageLifetimes: {
-    show: function () {
+    show: function () {//组件所在页面onshow
       let safeArea = this.data.safeArea || null;
       this.setData({
         position: null
@@ -49,7 +54,7 @@ Component({
       }
     },
     hide: function () {
-      // 页面被隐藏
+      //组件所在页面onshow
       this.setData({
         position: null,
         isShow: false
