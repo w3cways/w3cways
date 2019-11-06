@@ -1,0 +1,69 @@
+/**
+ * 拖拽移动
+ */
+
+var safeArea;
+
+var left;
+var top;
+
+function init(newValue, oldValue, ownerInstance, instance) {//初始化
+  if (newValue) {
+    var ins = ownerInstance.selectComponent('.drag') // 返回组件的实例
+    ins.setStyle({
+      "left": newValue.left,
+      "top": newValue.top
+    });
+  }
+}
+
+
+function handleTouchMove(e, ins) {
+  var instance = ins.selectComponent('.drag') // 返回组件的实例
+  var touch = e.touches[0] || e.changedTouches[0]
+
+  if (!safeArea) safeArea = instance.getDataset().area;
+
+  var pageX, pageY;
+
+  if (touch.clientX < safeArea.left) {//横向安全区域
+    pageX = safeArea.left
+  } else if (touch.clientX > safeArea.right - 50) {
+    pageX = safeArea.right - 50
+  } else {
+    pageX = touch.clientX
+  }
+
+  if (touch.clientY < safeArea.top + 25) {//纵向安全区域
+    pageY = safeArea.top + 25
+  } else if (touch.clientY > safeArea.bottom - 150) {
+    pageY = safeArea.bottom - 150
+  } else {
+    pageY = touch.clientY
+  }
+  instance.setStyle({
+    "left": pageX + 'px',
+    "top": pageY + 'px'
+  });
+  left = pageX + 'px';
+  top = pageY + 'px';
+  return false
+
+}
+
+function handleTouchEnd(e, ins) {//移动结束
+
+  var position = {
+    left: left,
+    top: top
+  }
+
+  ins.callMethod('setPosition', position)//调用drag组件中的setPosition函数，存入Storage
+
+}
+
+module.exports = {
+  handleTouchMove: handleTouchMove,
+  handleTouchEnd: handleTouchEnd,
+  init: init
+}

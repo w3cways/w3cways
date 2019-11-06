@@ -1,0 +1,20 @@
+/* components/drag/drag.wxss */
+.drag{
+  transform: translateY(-50%);
+  position: fixed;
+  top: 530rpx;
+  left: 330rpx;
+  font-size: 20rpx;
+  display: block;
+  border-radius: 50%;
+  line-height: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  padding-top: 20rpx;
+  background: rgba(245, 166, 35,1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  z-index: 10000;
+  text-align: center;
+  box-sizing: border-box;
+}
