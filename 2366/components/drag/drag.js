@@ -9,9 +9,6 @@ Component({
     position: Object
   },
 
-
-
-
   attached: function () {
     let safeArea = GlobalData.systemInfo.safeArea || null;
     if (safeArea) {

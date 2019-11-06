@@ -1,5 +1,5 @@
 /**
- * 拖拽移动
+ * move.wxs
  */
 
 var safeArea;
@@ -52,12 +52,10 @@ function handleTouchMove(e, ins) {
 }
 
 function handleTouchEnd(e, ins) {//移动结束
-
   var position = {
     left: left,
     top: top
   }
-
   ins.callMethod('setPosition', position)//调用drag组件中的setPosition函数，存入Storage
 
 }

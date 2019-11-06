@@ -1,8 +1,7 @@
 <!--components/drag/drag.wxml-->
 <wxs module="move" src="./move.wxs"></wxs>
 <block wx:if="{{isShow}}">
-  <view appId="wxbb58374cdce267a6" class="drag"  data-area="{{safeArea}}" data-position="{{position}}" change:prop="{{move.init}}" prop="{{position}}" catchtouchmove="{{move.handleTouchMove}}"
+  <view  class="drag"  data-area="{{safeArea}}" data-position="{{position}}" change:prop="{{move.init}}" prop="{{position}}" catchtouchmove="{{move.handleTouchMove}}"
     catchtouchend="{{move.handleTouchEnd}}">
-
   </view>
 </block>
