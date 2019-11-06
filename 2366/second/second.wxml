@@ -1,4 +1,0 @@
-<!--second/second.wxml-->
-<text>second/second.wxml</text>
-<drag></drag>
-<button bindtap="toThird">跳转到第3个页面</button>
