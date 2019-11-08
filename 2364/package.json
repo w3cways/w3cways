@@ -1,0 +1,17 @@
+{
+  "name": "node-redis",
+  "version": "1.0.0",
+  "description": "node使用redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-body": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "redis": "^2.8.0"
+  }
+}
