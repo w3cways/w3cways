@@ -1,0 +1,15 @@
+{
+  "name": "2373",
+  "version": "1.0.0",
+  "description": "koa中使用websocket(ws)，并共享端口",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "ws": "^7.2.0"
+  }
+}
